@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin - Malvar Bat Cave Cafe</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="img/logo.png" class="img-fluid" style="height: 100px;" alt="Logo">
+            </a>
+            <a href="#" class="navbar-brand">Malvar Bat Cave Cafe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#bookingModal">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="admin.html" class="nav-link">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Admin Section-->
+    <section class="p-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Admin Booking Approval</h1>
+            <div class="mb-3 text-center">
+                <button class="btn btn-danger" onclick="clearAllBookings()">Clear All Bookings</button>
+            </div>
+            <div id="bookingsTable" class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Room Type</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>Hours</th>
+                            <th>People</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingsBody">
+                        <!-- Bookings will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book a Room</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label for="studentId" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" id="studentId" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="roomType" class="form-label">Room Type</label>
+                            <select class="form-control" id="roomType" required>
+                                <option value="">Select Room</option>
+                                <option value="study">Study Room</option>
+                                <option value="function">Function Room</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reservationDate" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="reservationDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="startTime" class="form-label">Start Time</label>
+                            <input type="time" class="form-control" id="startTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hours" class="form-label">Hours</label>
+                            <select class="form-control" id="hours" required>
+                                <option value="">Select Hours</option>
+                                <option value="1">1 Hour</option>
+                                <option value="2">2 Hours</option>
+                                <option value="3">3 Hours</option>
+                                <option value="4">4 Hours</option>
+                                <option value="5">5 Hours</option>
+                                <option value="6">6 Hours</option>
+                                <option value="7">7 Hours</option>
+                                <option value="8">8 Hours</option>
+                                <option value="9">9 Hours</option>
+                                <option value="10">10 Hours</option>
+                                <option value="11">11 Hours</option>
+                                <option value="12">12 Hours</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="numPeople" class="form-label">Number of People</label>
+                            <input type="number" class="form-control" id="numPeople" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Equipment</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="projector">
+                                <label class="form-check-label" for="projector">Projector</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="speakerMike">
+                                <label class="form-check-label" for="speakerMike">Speaker & Microphone</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Estimated Cost: <span id="estimatedCost">0.00 PHP</span></strong>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Booking</button>
+                    </form>
+                    <div id="warningMessage" class="alert alert-danger mt-3" style="display: none;">
+                        <span id="warningText"></span>
+                    </div>
+                    <div id="confirmationMessage" class="alert alert-success mt-3" style="display: none;">
+                        Booking submitted successfully! It will be reviewed by an admin.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2025 Malvar Bat Cave Cafe</p>
+            <a href="" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Operating hours: 13:00 to 01:00 (1pm to 1am)
+        const OPEN_TIME = '13:00';
+        const CLOSE_TIME = '01:00';
+
+        // Pricing constants
+        const BASE_RATE_PER_HOUR = 50.00;
+        const MINIMUM_FEE = 75.00;
+        const FUNCTION_ROOM_RATE = 1000.00;
+        const EQUIPMENT_RATE_PER_HOUR = 150.00;
+
+        // Study room max capacity
+        const STUDY_ROOM_MAX_PAX = 20;
+
+        // Function to calculate estimated cost
+        function calculateCost() {
+            const hours = parseInt(document.getElementById('hours').value) || 0;
+            const roomType = document.getElementById('roomType').value;
+            const projector = document.getElementById('projector').checked;
+            const speakerMike = document.getElementById('speakerMike').checked;
+
+            let baseCost;
+            if (roomType === 'function') {
+                baseCost = hours * FUNCTION_ROOM_RATE;
+            } else {
+                baseCost = hours < 2 ? MINIMUM_FEE : hours * BASE_RATE_PER_HOUR;
+            }
+
+            const equipmentCost = (projector ? EQUIPMENT_RATE_PER_HOUR * hours : 0) + (speakerMike ? EQUIPMENT_RATE_PER_HOUR * hours : 0);
+            const total = baseCost + equipmentCost;
+            document.getElementById('estimatedCost').textContent = total.toFixed(2) + ' PHP';
+        }
+
+        // Attach event listeners for cost calculation
+        document.getElementById('hours').addEventListener('input', calculateCost);
+        document.getElementById('roomType').addEventListener('change', calculateCost);
+        document.getElementById('projector').addEventListener('change', calculateCost);
+        document.getElementById('speakerMike').addEventListener('change', calculateCost);
+
+        // Helper: Convert time string (HH:MM) to minutes since midnight
+        function timeToMinutes(time) {
+            const [hours, minutes] = time.split(':').map(Number);
+            return hours * 60 + minutes;
+        }
+
+        // Helper: Check if two time ranges overlap
+        function timesOverlap(start1, end1, start2, end2) {
+            return start1 < end2 && start2 < end1;
+        }
+
+        // Helper: Validate if booking is within operating hours
+        function isWithinOperatingHours(startTime, hours) {
+            let startMinutes = timeToMinutes(startTime);
+            let endMinutes = startMinutes + (hours * 60);
+            const openMinutes = timeToMinutes(OPEN_TIME);
+            const closeMinutes = timeToMinutes(CLOSE_TIME) + 1440;
+            const cutoffMinutes = closeMinutes - 30;
+
+            if (startMinutes < openMinutes) {
+                startMinutes += 1440;
+                endMinutes += 1440;
+            }
+
+            const isValid = startMinutes >= openMinutes && endMinutes <= cutoffMinutes;
+            return isValid;
+        }
+
+        // Helper: Check for booking conflicts and return the reason
+        function hasConflict(newBooking, existingBookings) {
+            const { date, startTime, hours, roomType, numPeople } = newBooking;
+            const newStart = timeToMinutes(startTime);
+            const newEnd = newStart + (hours * 60);
+            let totalPaxInOverlap = 0;
+            let hasOverlap = false;
+
+            for (const booking of existingBookings) {
+                if (booking.date !== date) continue;
+
+                const existingStart = timeToMinutes(booking.startTime);
+                const existingEnd = existingStart + (booking.hours * 60);
+
+                if (timesOverlap(newStart, newEnd, existingStart, existingEnd)) {
+                    hasOverlap = true;
+                    if (booking.roomType === 'function' || roomType === 'function') {
+                        return 'function_overlap';
+                    }
+                    totalPaxInOverlap += booking.numPeople;
+                }
+            }
+
+            if (roomType === 'study') {
+                totalPaxInOverlap += numPeople;
+                if (totalPaxInOverlap > STUDY_ROOM_MAX_PAX) {
+                    return 'capacity_exceeded';
+                }
+                if (hasOverlap) {
+                    return 'existing_booking';
+                }
+            }
+
+            return false;
+        }
+
+        // Helper: Show warning message in modal
+        function showWarning(message) {
+            const warningDiv = document.getElementById('warningMessage');
+            document.getElementById('warningText').textContent = message;
+            warningDiv.style.display = 'block';
+            warningDiv.classList.add('show');
+            setTimeout(() => {
+                warningDiv.style.display = 'none';
+                warningDiv.classList.remove('show');
+            }, 5000);
+        }
+
+        // Handle form submission with validation
+        document.getElementById('bookingForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const studentId = document.getElementById('studentId').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const roomType = document.getElementById('roomType').value;
+            const date = document.getElementById('reservationDate').value;
+            const startTime = document.getElementById('startTime').value;
+            const hours = parseInt(document.getElementById('hours').value);
+            const numPeople = parseInt(document.getElementById('numPeople').value);
+
+            const phonePattern = /^09\d{9}$/;
+            if (!phonePattern.test(phone)) {
+                showWarning('Phone number must start with 09 and be exactly 11 digits (e.g., 09123456789).');
+                return;
+            }
+
+            if (roomType === 'study' && numPeople > STUDY_ROOM_MAX_PAX) {
+                showWarning(`Study Room capacity exceeded: Maximum 20 people allowed. You entered ${numPeople}.`);
+                return;
+            }
+
+            if (!isWithinOperatingHours(startTime, hours)) {
+                showWarning('Booking must be within operating hours (1:00 PM to 1:00 AM). Please adjust your start time or hours.');
+                return;
+            }
+
+            const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            const newBooking = { studentId, email, phone, roomType, date, startTime, hours, numPeople };
+
+            const conflictReason = hasConflict(newBooking, existingBookings);
+            if (conflictReason) {
+                if (conflictReason === 'function_overlap') {
+                    showWarning('The room is booked for a function at this time. Please choose a different time.');
+                } else if (conflictReason === 'capacity_exceeded') {
+                    showWarning('The room is full at this time. Please choose a different time or reduce the number of people.');
+                } else if (conflictReason === 'existing_booking') {
+                    showWarning('There is an existing booking at this time. Please choose a different time.');
+                }
+                return;
+            }
+
+            existingBookings.push(newBooking);
+            localStorage.setItem('bookings', JSON.stringify(existingBookings));
+
+            document.getElementById('warningMessage').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            this.reset();
+            calculateCost();
+        });
+
+        // Simple admin password check
+        const ADMIN_PASSWORD = 'admin123';
+
+        window.onload = function () {
+            const password = prompt('Enter admin password:');
+            if (password !== ADMIN_PASSWORD) {
+                alert('Access denied. Redirecting to home.');
+                window.location.href = 'index.html';
+                return;
+            }
+            loadBookings();
+        };
+
+        // Helper: Convert 24-hour time to 12-hour with AM/PM
+        function formatTime12Hour(time24) {
+            const [hours, minutes] = time24.split(':').map(Number);
+            const period = hours >= 12 ? 'PM' : 'AM';
+            const hours12 = hours % 12 || 12;
+            return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
+        }
+
+        // Load and display bookings
+        function loadBookings() {
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            const tbody = document.getElementById('bookingsBody');
+            tbody.innerHTML = '';
+
+            bookings.forEach((booking, index) => {
+                if (!booking.status) {
+                    booking.status = 'pending';
+                }
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${booking.studentId}</td>
+                    <td>${booking.email}</td>
+                    <td>${booking.phone}</td>
+                    <td>${booking.roomType}</td>
+                    <td>${booking.date}</td>
+                    <td>${formatTime12Hour(booking.startTime)}</td>
+                    <td>${booking.hours}</td>
+                    <td>${booking.numPeople}</td>
+                    <td>${booking.status}</td>
+                    <td>
+                        ${booking.status === 'pending' ? `
+                            <button class="btn btn-success btn-sm" onclick="approveBooking(${index})">Approve</button>
+                            <button class="btn btn-danger btn-sm" onclick="rejectBooking(${index})">Reject</button>
+                        ` : ''}
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Approve booking
+        function approveBooking(index) {
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            bookings[index].status = 'approved';
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+            loadBookings();
+        }
+
+        // Reject booking
+        function rejectBooking(index) {
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            bookings.splice(index, 1);
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+            loadBookings();
+        }
+
+        // Clear all bookings
+        function clearAllBookings() {
+            if (confirm('Are you sure you want to clear all bookings? This action cannot be undone.')) {
+                localStorage.removeItem('bookings');
+                loadBookings();
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('modeToggle');
+            const body = document.body;
+            const lightIcon = document.getElementById('light-icon');
+            const darkIcon = document.getElementById('dark-icon');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+            applyTheme(initialTheme);
+
+            // Function to apply the theme
+            function applyTheme(theme) {
+                body.dataset.theme = theme;
+                if (theme === 'dark') {
+                    lightIcon.style.display = 'none';
+                    darkIcon.style.display = 'inline';
+                } else {
+                    lightIcon.style.display = 'inline';
+                    darkIcon.style.display = 'none';
+                }
+            }
+
+            // Load saved theme from localStorage on page load
+            const savedTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' if none saved
+            applyTheme(savedTheme);
+
+            // Toggle and save on click
+            toggleBtn.addEventListener('click', () => {
+                const newTheme = body.dataset.theme === 'light' ? 'dark' : 'light';
+                applyTheme(newTheme);
+                localStorage.setItem('theme', newTheme); // Save to localStorage
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

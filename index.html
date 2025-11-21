@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Malvar Bat Cave Cafe</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/White logo.png" class="img-fluid" alt="Logo" style="width: 100px;">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#bookingModal">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="admin.html" class="nav-link">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- New About Section with Motto -->
+    <section class="about-motto-section mb-6">
+        <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+            <div class="motto-content text-center">
+                <h2 class="motto-text display-1 fw-bold">A Night Out Study Cave For Nocturnal Students of BSU-Malvar Students</h2>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- About Us -->
+    <section class="about-us-section py-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-5">
+                    <h1 class="about-title display-4 fw-bold text-shadow">About Us</h1>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Mission Card -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="about-card card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3">
+                                <i class="fas fa-bullseye fa-3x text-primary"></i> <!-- Target icon for Mission -->
+                            </div>
+                            <h2 class="card-title h4 fw-bold mb-3">Our Mission</h2>
+                            <p class="card-text lead text-muted">
+                                The Malvar Bat Cave Cafe is dedicated to providing a consistently comfortable, secure,
+                                and inspiring environment where students can focus and socialize. We commit to serving
+                                high-quality coffee and nourishment, and offering a seamless, professional experience
+                                through functional services like our dedicated reservation system, ensuring every visit
+                                lights up the path to their next achievement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vision Card -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="about-card card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3">
+                                <i class="fas fa-eye fa-3x text-success"></i> <!-- Eye icon for Vision -->
+                            </div>
+                            <h2 class="card-title h4 fw-bold mb-3">Our Vision</h2>
+                            <p class="card-text lead text-muted">
+                                To be the undisputed sanctuary and second home for the BSU community, recognized as the
+                                best late-night establishment that fuels academic success, fosters genuine connection,
+                                and elevates the local coffee culture in Malvar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu -->
+    <section class="featured-menu-section py-5 mb-5 fade-on-scroll">
+        <div class="container">
+            <div class="row text-center g-4">
+                <h2 class="text-center">Featured Menu</h2>
+                <!-- Specialty Coffee Card -->
+                <div class="col-md-4">
+                    <div class="menu-card card border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="img-wrapper mb-3">
+                                <img src="img/coffeebrew.jpg" alt="Specialty Coffee" class="menu-img img-fluid">
+                            </div>
+                            <h3 class="card-title mb-3 fw-bold">Coffee</h3>
+                            <a href="menu.html" class="btn btn-primary btn-lg">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pastries Card -->
+                <div class="col-md-4">
+                    <div class="menu-card card border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="img-wrapper mb-3">
+                                <img src="img/redmuffins.jpg" alt="Pastries" class="menu-img img-fluid">
+                            </div>
+                            <h3 class="card-title mb-3 fw-bold">Pastries</h3>
+                            <a href="menu.html" class="btn btn-primary btn-lg">View More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Snacks Card -->
+                <div class="col-md-4">
+                    <div class="menu-card card border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="img-wrapper mb-3">
+                                <img src="img/nachos.jpg" alt="Snacks" class="menu-img img-fluid">
+                            </div>
+                            <h3 class="card-title mb-3 fw-bold">Snacks</h3>
+                            <a href="menu.html" class="btn btn-primary btn-lg">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="learn" class="booking-section py-5 mb-5 fade-on-scroll">
+        <div class="container h-100 d-flex align-items-center">
+            <div class="row w-100 align-items-center justify-content-between">
+                <div class="col-md p-5 text-overlay">
+                    <h2 class="booking-title mb-3 text-center">You can Book Here</h2>
+                    <p class="booking-text mb-4 text-center">Reserve your spot now!</p>
+                    <a href="#" class="nav-link btn btn-primary btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#bookingModal">Book Now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Newsletter-->
+    <section class="bg-primary text-light p-5">
+        <div class="container">
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h3 class="mb-3 mb-md-o">Sign Up For Our Newsletter</h3>
+                <p class="lead">GET A 50% DISCOUNT ON OUR DRINK IF YOU JOIN NOW!</p>
+                <div class="input-group news-input">
+                    <input type="text" class="form-control" placeholder="Enter Your Email" />
+                    <button class="btn btn-dark btn-lg" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--FAQ-->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Ask Questions</h2>
+            <div class="accordion accordion-flush" id="questions">
+                <!--Item 1-->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#questions-one">
+                            Did you have Wi-Fi?
+                        </button>
+                    </h2>
+                    <div id="questions-one" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Yes, we have Wi-Fi.</div>
+                    </div>
+                </div>
+                <!--item 2-->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#questions-two">
+                            Did you have Parking Spot?
+                        </button>
+                    </h2>
+                    <div id="questions-two" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Yes, we have a Parking Spot for our customers.</div>
+                    </div>
+                </div>
+                <!--Item 3-->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#questions-three">
+                            Did you have a Power outlets?
+                        </button>
+                    </h2>
+                    <div id="questions-three" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Of course we have, feel free to use it.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Staffs-->
+
+    <section id="staffs" class="p-5 bg-primary">
+        <div class="container">
+            <h2 class="text-center text-white">
+                Our Staff Members
+            </h2>
+            <p class="lead text-center text-white mb-5">
+                Our staff that will serves you forever and ever
+            </p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/10.jpg"
+                                class="rounded-circle img-fluid mb-3" alt="">
+                            <h3 class="card-title mb-3">Sedrick</h3>
+                            <p class="card-text">
+                                A easy person going that always smiles and greet you
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/8.jpg"
+                                class="rounded-circle img-fluid mb-3" alt="">
+                            <h3 class="card-title mb-3">Lay</h3>
+                            <p class="card-text">
+                                Don't judge the books by its covers, he's a good barista
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/13.jpg"
+                                class="rounded-circle img-fluid mb-3" alt="">
+                            <h3 class="card-title mb-3">Lily</h3>
+                            <p class="card-text">
+                                Don't piss her off, she bite so becareful around her
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/9.jpg"
+                                class="rounded-circle img-fluid mb-3" alt="">
+                            <h3 class="card-title mb-3">Amethyst</h3>
+                            <p class="card-text">
+                                The most kind staff and girl you will ever got to know
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact and Location-->
+    <section class="p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col.md">
+                    <h2 class="text-center mb4">
+                        Contact Info
+                    </h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">
+                                Main Location:
+                            </span> Malvar
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">
+                                Contact Number:
+                            </span> +63 9923230501
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">
+                                Email:
+                            </span> malvarbatcave@gmail.com
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="p-5 bg-primary text-white text-center position-relative">
+        <div class="container">
+
+            <!-- Social Media -->
+            <div class="social-icons mb-3">
+                <a href="https://www.facebook.com" target="_blank" class="text-white"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank" class="text-white"><i class="bi bi-tiktok"></i></a>
+            </div>
+
+            <p class="lead mb-4">
+                © 2025 Malvar Bat Cave Cafe — All Rights Reserved
+            </p>
+
+            <!-- Mode + Back to Top -->
+            <div class="position-absolute bottom-0 end-0 d-flex flex-column align-items-end">
+                <button id="modeToggle" class="mb-2 p-2" title="Toggle Dark/Light Mode">
+                    <i class="bi bi-sun h1" id="light-icon"></i>
+                    <i class="bi bi-moon h1" id="dark-icon" style="display: none;"></i>
+                </button>
+
+                <a href="#top" class="p-3">
+                    <i class="bi bi-arrow-up-circle h1 bg-light"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book a Room</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add this inside the modal-body, after the form -->
+                    <div id="warningMessage" class="alert alert-danger alert-dismissible fade mt-3"
+                        style="display: none;" role="alert">
+                        <span id="warningText"></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label for="studentId" class="form-label">Student ID *</label>
+                            <input type="text" class="form-control" id="studentId" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Contact Email *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Contact Phone *</label>
+                            <input type="tel" class="form-control" id="phone" pattern="^09\d{9}$" maxlength="11"
+                                required title="Phone number must start with 09 and be 11 digits (e.g., 09123456789)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="roomType" class="form-label">Room Type</label>
+                            <select class="form-select" id="roomType" required>
+                                <option value="study">Study Room</option>
+                                <option value="function">Function Room</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reservationDate" class="form-label">Reservation Date *</label>
+                            <input type="date" class="form-control" id="reservationDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="startTime" class="form-label">Start Time *</label>
+                            <input type="time" class="form-control" id="startTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hours" class="form-label">Hours</label>
+                            <select class="form-control" id="hours" required>
+                                <option value="">Select Hours</option>
+                                <option value="1">1 Hour</option>
+                                <option value="2">2 Hours</option>
+                                <option value="3">3 Hours</option>
+                                <option value="4">4 Hours</option>
+                                <option value="5">5 Hours</option>
+                                <option value="6">6 Hours</option>
+                                <option value="7">7 Hours</option>
+                                <option value="8">8 Hours</option>
+                                <option value="9">9 Hours</option>
+                                <option value="10">10 Hours</option>
+                                <option value="11">11 Hours</option>
+                                <option value="12">12 Hours</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="numPeople" class="form-label">Number of People *</label>
+                            <input type="number" class="form-control" id="numPeople" min="1" max="20" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Equipment Rental</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="projector">
+                                <label class="form-check-label" for="projector">Projector (150 PHP/hour)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="speakerMike">
+                                <label class="form-check-label" for="speakerMike">Speaker and Mike (150
+                                    PHP/hour)</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Estimated Cost: <span id="estimatedCost">0.00 PHP</span></strong>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Reservation</button>
+                    </form>
+                    <div id="confirmationMessage" class="mt-3" style="display: none;">
+                        <div class="alert alert-success">Reservation Confirmed! Your booking has been submitted and is
+                            pending approval.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Operating hours: 13:00 to 01:00 (1pm to 1am)
+        const OPEN_TIME = '13:00';
+        const CLOSE_TIME = '01:00';
+
+        // Pricing constants
+        const BASE_RATE_PER_HOUR = 50.00; // Study room
+        const MINIMUM_FEE = 75.00; // Study room minimum
+        const FUNCTION_ROOM_RATE = 1000.00; // Function room per hour
+        const EQUIPMENT_RATE_PER_HOUR = 150.00;
+
+        // Study room max capacity
+        const STUDY_ROOM_MAX_PAX = 20;
+
+        // Function to calculate estimated cost
+        function calculateCost() {
+            const hours = parseInt(document.getElementById('hours').value) || 0;
+            const roomType = document.getElementById('roomType').value;
+            const projector = document.getElementById('projector').checked;
+            const speakerMike = document.getElementById('speakerMike').checked;
+
+            // Calculate base cost based on room type
+            let baseCost;
+            if (roomType === 'function') {
+                baseCost = hours * FUNCTION_ROOM_RATE;
+            } else {
+                // Study room: Use minimum fee if hours < 2, otherwise base rate * hours
+                baseCost = hours < 2 ? MINIMUM_FEE : hours * BASE_RATE_PER_HOUR;
+            }
+
+            // Calculate equipment cost: 150 PHP/hour per selected item
+            const equipmentCost = (projector ? EQUIPMENT_RATE_PER_HOUR * hours : 0) + (speakerMike ? EQUIPMENT_RATE_PER_HOUR * hours : 0);
+
+            // Total cost
+            const total = baseCost + equipmentCost;
+            document.getElementById('estimatedCost').textContent = total.toFixed(2) + ' PHP';
+        }
+
+        // Attach event listeners for cost calculation
+        document.getElementById('hours').addEventListener('input', calculateCost);
+        document.getElementById('roomType').addEventListener('change', calculateCost);
+        document.getElementById('projector').addEventListener('change', calculateCost);
+        document.getElementById('speakerMike').addEventListener('change', calculateCost);
+
+        // Helper: Convert time string (HH:MM) to minutes since midnight
+        function timeToMinutes(time) {
+            const [hours, minutes] = time.split(':').map(Number);
+            return hours * 60 + minutes;
+        }
+
+        // Helper: Check if two time ranges overlap
+        function timesOverlap(start1, end1, start2, end2) {
+            return start1 < end2 && start2 < end1;
+        }
+
+        // Helper: Validate if booking is within operating hours
+        function isWithinOperatingHours(startTime, hours) {
+            let startMinutes = timeToMinutes(startTime);
+            let endMinutes = startMinutes + (hours * 60);
+            const openMinutes = timeToMinutes(OPEN_TIME); // 780 for 13:00
+            const closeMinutes = timeToMinutes(CLOSE_TIME) + 1440; // 1500 for 01:00 next day
+            const cutoffMinutes = closeMinutes - 30; // 1470 for 00:30 next day (30 mins before close)
+
+            console.log(`Checking: startTime=${startTime}, hours=${hours}, startMinutes=${startMinutes}, endMinutes=${endMinutes}, open=${openMinutes}, close=${closeMinutes}, cutoff=${cutoffMinutes}`);
+
+            // If start time is before open (e.g., 00:00), treat it as next day
+            if (startMinutes < openMinutes) {
+                startMinutes += 1440;
+                endMinutes += 1440;
+                console.log(`Adjusted for next day: startMinutes=${startMinutes}, endMinutes=${endMinutes}`);
+            }
+
+            // Check if end time is within operating hours and not in the last 30 mins
+            const isValid = startMinutes >= openMinutes && endMinutes <= cutoffMinutes;
+            console.log(`Is valid: ${isValid}`);
+            return isValid;
+        }
+
+        // Helper: Check for booking conflicts and return the reason
+        function hasConflict(newBooking, existingBookings) {
+            const { date, startTime, hours, roomType, numPeople } = newBooking;
+            const newStart = timeToMinutes(startTime);
+            const newEnd = newStart + (hours * 60);
+            let totalPaxInOverlap = 0;
+            let hasOverlap = false;
+
+            for (const booking of existingBookings) {
+                if (booking.date !== date) continue; // Only check same date
+
+                const existingStart = timeToMinutes(booking.startTime);
+                const existingEnd = existingStart + (booking.hours * 60);
+
+                if (timesOverlap(newStart, newEnd, existingStart, existingEnd)) {
+                    hasOverlap = true;
+                    if (booking.roomType === 'function' || roomType === 'function') {
+                        // Function room: Any overlap is a conflict
+                        return 'function_overlap';
+                    }
+                    // Both are study rooms: Sum pax for overlapping bookings
+                    totalPaxInOverlap += booking.numPeople;
+                }
+            }
+
+            // For study room, check total pax including new booking
+            if (roomType === 'study') {
+                totalPaxInOverlap += numPeople;
+                if (totalPaxInOverlap > STUDY_ROOM_MAX_PAX) {
+                    return 'capacity_exceeded';
+                }
+                // If there's overlap but capacity not exceeded, still warn about existing booking
+                if (hasOverlap) {
+                    return 'existing_booking';
+                }
+            }
+
+            return false; // No conflict
+        }
+
+        // Helper: Show warning message in modal
+        function showWarning(message) {
+            const warningDiv = document.getElementById('warningMessage');
+            document.getElementById('warningText').textContent = message;
+            warningDiv.style.display = 'block';
+            warningDiv.classList.add('show');
+            // Auto-hide after 5 seconds (optional)
+            setTimeout(() => {
+                warningDiv.style.display = 'none';
+                warningDiv.classList.remove('show');
+            }, 5000);
+        }
+
+        // Handle form submission with validation
+        document.getElementById('bookingForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form values
+            const studentId = document.getElementById('studentId').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const roomType = document.getElementById('roomType').value;
+            const date = document.getElementById('reservationDate').value;
+            const startTime = document.getElementById('startTime').value;
+            const hours = parseInt(document.getElementById('hours').value);
+            const numPeople = parseInt(document.getElementById('numPeople').value);
+
+            // Validate phone number
+            const phonePattern = /^09\d{9}$/;
+            if (!phonePattern.test(phone)) {
+                showWarning('Phone number must start with 09 and be exactly 11 digits (e.g., 09123456789).');
+                return;
+            }
+
+            // Validate capacity for study room (initial check, but conflict check will handle overlaps)
+            if (roomType === 'study' && numPeople > STUDY_ROOM_MAX_PAX) {
+                showWarning(`Study Room capacity exceeded: Maximum 20 people allowed. You entered ${numPeople}.`);
+                return;
+            }
+
+            // Validate operating hours
+            if (!isWithinOperatingHours(startTime, hours)) {
+                showWarning('Booking must be within operating hours (1:00 PM to 1:00 AM). Please adjust your start time or hours.');
+                return;
+            }
+
+            // Get existing bookings from localStorage
+            const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+
+            // Create new booking object (includes numPeople)
+            const newBooking = { studentId, email, phone, roomType, date, startTime, hours, numPeople };
+
+            // Check for conflicts
+            const conflictReason = hasConflict(newBooking, existingBookings);
+            if (conflictReason) {
+                if (conflictReason === 'function_overlap') {
+                    showWarning('The room is booked for a function at this time. Please choose a different time.');
+                } else if (conflictReason === 'capacity_exceeded') {
+                    showWarning('The room is full at this time. Please choose a different time or reduce the number of people.');
+                } else if (conflictReason === 'existing_booking') {
+                    showWarning('There is an existing booking at this time. Please choose a different time.');
+                }
+                return;
+            }
+
+            // No conflicts: Save booking
+            existingBookings.push(newBooking);
+            localStorage.setItem('bookings', JSON.stringify(existingBookings));
+
+            // Hide any previous warning and show confirmation
+            document.getElementById('warningMessage').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            this.reset();
+            calculateCost(); // Reset cost display
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
